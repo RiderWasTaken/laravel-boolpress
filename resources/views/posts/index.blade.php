@@ -21,7 +21,16 @@
                     <td>{{$post->description}}</td>
                     <td>{{$post->accountName}}</td>
                     <td>{{$post->date}}</td>
-                    <td><a href="/posts/{{$post->id}}"><div style="background: purple; width: 15px; height: 15px;"></div></a></td>
+                    <td class="d-flex justify-content-around">
+                        <a href="{{route('posts.show', $post)}}"><div style="background: purple; width: 15px; height: 15px;"></div></a>
+                        <a href="{{route('posts.edit', $post)}}"><div style="background: blue; width: 15px; height: 15px;"></div></a>
+                        <form action="{{route('posts.destroy', $post)}}" method="POST">
+                            @csrf
+                            @method ('DELETE')
+
+                            <button type="submit" class="btn btn-danger"></button>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         </tbody>

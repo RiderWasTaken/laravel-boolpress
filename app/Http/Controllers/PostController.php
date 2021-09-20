@@ -36,19 +36,13 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'picture'=> 'url'
-        ]);
+        $request->validate
+        (['picture'=> 'url']);
 
         $data = $request->all();
 
         $post = new Post();
-        $post->picture = $data['picture'];
-        $post->description = $data['description'];
-        $post->accountName = $data['accountName'];
-        $post->accountPfp = $data['accountPfp'];
-        $post->date = $data['date'];
-        $post->save();
+        $this->updatePost($post, $data);
 
         return redirect()->route('posts.single', $post->id);
     }
@@ -71,9 +65,10 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Post $post)
     {
-        //
+        return view('posts.edit', compact('post'));
+
     }
 
     /**
@@ -83,9 +78,12 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Post $post)
     {
-        //
+        $data = $request->all();
+        $this->updatePost($post, $data);
+
+        return redirect()->route('posts.show', $post);
     }
 
     /**
@@ -94,8 +92,19 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Post $post)
     {
-        //
+        $post->delete();
+        
+        return redirect()->route('posts.index');
+    }
+
+    private function updatePost(Post $post, $data) {
+        $post->picture = $data['picture'];
+        $post->description = $data['description'];
+        $post->accountName = $data['accountName'];
+        $post->accountPfp = $data['accountPfp'];
+        $post->date = $data['date'];
+        $post->save();
     }
 }

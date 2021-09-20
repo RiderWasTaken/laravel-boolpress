@@ -8,6 +8,7 @@
 @import '~bootstrap/scss/bootstrap';
 
 
+
 * {
     margin: 0;
     padding: 0;
@@ -24,7 +25,7 @@
   }
   
   .post-card {
-    width: calc(20% - 24px);
+    width: calc(25% - 24px);
     margin: 0 10px 20px;
   }
   
@@ -50,4 +51,14 @@
     border-bottom: 2px solid #FFF;
   }
   
-  
+  #db-tracker {
+    color: #FFF;
+
+    thead tr th{
+      font-size: 20px
+    }
+
+    tbody tr td img{
+      width: 25%;
+    }
+  }

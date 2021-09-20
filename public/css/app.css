@@ -10958,7 +10958,7 @@ body {
 }
 
 .post-card {
-  width: calc(20% - 24px);
+  width: calc(25% - 24px);
   margin: 0 10px 20px;
 }
 
@@ -10982,5 +10982,17 @@ body {
   border-left: 2px solid #FFF;
   border-right: 2px solid #FFF;
   border-bottom: 2px solid #FFF;
+}
+
+#db-tracker {
+  color: #FFF;
+}
+
+#db-tracker thead tr th {
+  font-size: 20px;
+}
+
+#db-tracker tbody tr td img {
+  width: 25%;
 }
 

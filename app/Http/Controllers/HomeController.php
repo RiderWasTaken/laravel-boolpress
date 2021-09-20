@@ -30,7 +30,7 @@ class HomeController extends Controller
             return 'you forgot to login, Dummy >:(';
         }
 
-        $allposts = Post::all();
-        return view('home', compact('allposts'));
+        // $allposts = Post::all();
+        // return view('home', compact('allposts'));
     }
 }

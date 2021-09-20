@@ -1,4 +1,4 @@
-@extends('layouts.app')
+<!-- @extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -22,20 +22,19 @@
 </div>
 @endsection
 
-
-    <div class="card-container">
-        @foreach($allposts as $post)
-            <div class="post-card">
-                <div class="post-pfp">
-                    <img src="{{$post->picture}}" alt="">
-                </div>
-                <div class="post-desc">
-                    <h1>{{ $post['title']}}</h1>
-                    <h3>{{ $post['description']}}</h3>
-                    <span>{{ $post['date']}}</span>
-                    <span>{{ $post['date']}}</span>
-                    <span>{{ $post['vote']}}</span>
-                </div>
+<div class="card-container">
+    @foreach($allposts as $post)
+        <div class="post-card">
+            <div class="post-pfp">
+                <img src="{{$post->picture}}" alt="">
             </div>
-        @endforeach
-    </div>
+            <div class="post-desc">
+                <h1>{{ $post['title']}}</h1>
+                <h3>{{ $post['description']}}</h3>
+                <span>{{ $post['date']}}</span>
+                <span>{{ $post['date']}}</span>
+                <span>{{ $post['vote']}}</span>
+            </div>
+        </div>
+    @endforeach
+</div> -->

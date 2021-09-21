@@ -8,7 +8,7 @@
     <title>Laravel BoolPress</title>
 </head>
 <body>
-    <!-- <div class="container">
+    <div class="container">
         @foreach($allposts as $post)
             <div class="post-card">
                 <div class="post-pfp">
@@ -23,7 +23,7 @@
                 </div>
             </div>
         @endforeach
-    </div> -->
+    </div>
     @dump($allposts);
 </body>
 </html>

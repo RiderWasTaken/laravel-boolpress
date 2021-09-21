@@ -1,0 +1,30 @@
+.big-container {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    padding: 250px 300px;
+
+    .home-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 60%;
+        padding: 25px;
+        border: 2px solid #FFF;
+        border-radius: 25px;
+    }
+
+    .home-menu {
+
+        ul {
+            list-style: none;
+            line-height: 400%;
+
+            li {
+                font-size: 24px;
+            }
+        }
+    
+    }
+
+}

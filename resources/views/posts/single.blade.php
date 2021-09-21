@@ -13,6 +13,7 @@
             <span>Description: {{$post->description}}</span>
             <span>Published: {{$post->date}}</span>
         </div>
+        <a href="{{route('posts.index')}}"><button class="back-to">Back To Index</button></a>
     </div>
 @endsection
 

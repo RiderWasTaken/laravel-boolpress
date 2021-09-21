@@ -29,8 +29,9 @@ class HomeController extends Controller
         if(empty($user)) {
             return 'you forgot to login, Dummy >:(';
         }
-
-        // $allposts = Post::all();
-        // return view('home', compact('allposts'));
+    }
+    
+    public function pagenotfound() {
+        return view('errors.pagenotfound');
     }
 }

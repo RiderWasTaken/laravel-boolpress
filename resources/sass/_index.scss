@@ -1,0 +1,44 @@
+#db-tracker {
+
+    tbody tr {
+        margin: 140px 0;
+        
+        td {
+            margin: 0 10px;
+        }
+        #index-id {
+            width: 2%;
+        }
+
+        #index-pic {
+            width: 20%;
+        }
+
+        #index-desc {
+            width: 50%;
+        }
+
+        #index-author {
+            width: 2%;
+        }
+
+        #index-date {
+            width: 5%;
+        }
+
+        #index-tools  {
+            width: 20%;
+
+            div {
+                margin-bottom: 5px;
+            }
+        }
+
+        img{
+          width: 50%;
+        }
+
+    }
+    
+    
+}

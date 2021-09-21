@@ -13,33 +13,12 @@ class PostsTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        // $posts = [
-        //     [
-        //         'picture' => 'https://c8.alamy.com/comp/EPF1YW/nun-with-handgun-isolated-on-white-EPF1YW.jpg',
-        //         'description' => 'Nun...with guns',
-        //         'accountName' => 'XqcOw',
-        //         'accountPfp' => 'https://1tb.favim.com/preview/7/766/7664/76642/7664293.jpg',
-        //         'date' => '9/11/2001',
-        //     ]
-        // ];
-
-        // foreach ($posts as $post) {
-        //     $postObj = new Post();
-        //     $postObj->picture = $post['picture'];
-        //     $postObj->description = $post['description'];
-        //     $postObj->accountName = $post['accountName'];
-        //     $postObj->accountPfp = $post['accountPfp'];
-        //     $postObj->date = $post['date'];
-        //     $postObj->save();
-
-        // }
-
         for ($i=0;$i<50;$i++) {
             $postObj = new Post();
-            $postObj->picture = 'https://c8.alamy.com/comp/EPF1YW/nun-with-handgun-isolated-on-white-EPF1YW.jpg';
+            $postObj->picture = $faker->imageUrl(900, 900, 'aesthetic', true);
             $postObj->description = $faker->paragraph(5);
             $postObj->accountName = $faker->word();
-            $postObj->accountPfp = 'https://1tb.favim.com/preview/7/766/7664/76642/7664293.jpg';
+            $postObj->accountPfp = 'https://cdn.discordapp.com/attachments/880430888712806404/889824082399481856/AngyTwacer.jpg';
             $postObj->date = $faker->date();
             $postObj->save();
         }

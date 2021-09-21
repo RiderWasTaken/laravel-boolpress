@@ -1,5 +1,91 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
+#db-tracker tbody tr {
+  margin: 140px 0;
+}
+
+#db-tracker tbody tr td {
+  margin: 0 10px;
+}
+
+#db-tracker tbody tr #index-id {
+  width: 2%;
+}
+
+#db-tracker tbody tr #index-pic {
+  width: 20%;
+}
+
+#db-tracker tbody tr #index-desc {
+  width: 50%;
+}
+
+#db-tracker tbody tr #index-author {
+  width: 2%;
+}
+
+#db-tracker tbody tr #index-date {
+  width: 5%;
+}
+
+#db-tracker tbody tr #index-tools {
+  width: 20%;
+}
+
+#db-tracker tbody tr #index-tools div {
+  margin-bottom: 5px;
+}
+
+#db-tracker tbody tr img {
+  width: 50%;
+}
+
+.single-container {
+  display: flex;
+  padding: 150px 450px;
+}
+
+.single-container .single-pic {
+  width: 35%;
+}
+
+.single-container .single-details {
+  padding: 15px;
+}
+
+.single-container .single-details .acocunt-details {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.single-container .single-details .acocunt-details .single-pfp {
+  border-radius: 50%;
+  margin-right: 10px;
+  width: 10%;
+  border: 2px solid #FFF;
+}
+
+.single-container .single-details .acocunt-details .single-pfp img {
+  max-width: 100%;
+  border-radius: 50%;
+}
+
+.single-container .single-details span {
+  display: block;
+  margin: 15px 0;
+}
+
+.nf-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nf-container div img {
+  width: 65%;
+}
+
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -10982,18 +11068,6 @@ body {
   border-left: 2px solid #FFF;
   border-right: 2px solid #FFF;
   border-bottom: 2px solid #FFF;
-}
-
-#db-tracker {
-  color: #FFF;
-}
-
-#db-tracker thead tr th {
-  font-size: 20px;
-}
-
-#db-tracker tbody tr td img {
-  width: 25%;
 }
 
 .white {

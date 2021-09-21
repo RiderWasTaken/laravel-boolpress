@@ -4,6 +4,14 @@
 // Variables
 @import 'variables';
 
+@import 'index';
+@import 'single';
+
+@import 'notfound';
+
+
+
+
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
@@ -50,20 +58,6 @@
     border-right: 2px solid #FFF;
     border-bottom: 2px solid #FFF;
   }
-  
-  #db-tracker {
-    color: #FFF;
-
-    thead tr th{
-      font-size: 20px
-    }
-
-    tbody tr td img{
-      width: 25%;
-    }
-  }
-
-
 
 .white {
     color: #FFF;

@@ -18,5 +18,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/public', 'AddressController@publicSection');
 Route::get('/workshop', 'AddressController@privateSection');
+Route::get('pagenotfound', ['as' => 'notfound', 'uses' => 'HomeController@pagenotfound']);
 
 Route::resource('posts', 'PostController');

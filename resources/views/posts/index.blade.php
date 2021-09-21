@@ -2,33 +2,32 @@
 
 @section('content')
     <div class="card-container">
-    <table id="db-tracker">
+    <table id="db-tracker" class="white">
         <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">picture</th>
-                <th scope="col">description</th>
-                <th scope="col">author</th>
-                <th scope="col">date</th>
-                <th scope="col">details</th>
+                <th>#</th>
+                <th>picture</th>
+                <th>description</th>
+                <th>author</th>
+                <th>date</th>
+                <th>details</th>
             </tr>
         </thead>
         <tbody>
             @foreach($allposts as $post)
                 <tr>
-                    <th scope="row">{{$post->id}}</th>
-                    <td><img src="{{$post->picture}}"/></td>
-                    <td>{{$post->description}}</td>
-                    <td>{{$post->accountName}}</td>
-                    <td>{{$post->date}}</td>
-                    <td class="d-flex justify-content-around">
-                        <a href="{{route('posts.show', $post)}}"><div style="background: purple; width: 15px; height: 15px;"></div></a>
-                        <a href="{{route('posts.edit', $post)}}"><div style="background: blue; width: 15px; height: 15px;"></div></a>
+                    <th  id="index-id" scope="row">{{$post->id}}</th>
+                    <td id="index-pic"><img src="{{$post->picture}}"/></td>
+                    <td id="index-desc">{{$post->description}}</td>
+                    <td id="index-author">{{$post->accountName}}</td>
+                    <td id="index-date">{{$post->date}}</td>
+                    <td id="index-tools">
+                        <a href="{{route('posts.show', $post)}}"><div class="btn btn-primary">Show</div></a>
+                        <a href="{{route('posts.edit', $post)}}"><div class="btn btn-primary">Edit</div></a>
                         <form action="{{route('posts.destroy', $post)}}" method="POST">
                             @csrf
                             @method ('DELETE')
-
-                            <button type="submit" class="btn btn-danger"></button>
+                            <button type="submit" class="btn btn-danger">Delete</button>
                         </form>
                     </td>
                 </tr>

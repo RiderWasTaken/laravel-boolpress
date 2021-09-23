@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\Category;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -25,7 +26,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('posts.create');
+        $categories = Category::all();
+        return view('posts.create', compact('categories'));
     }
 
     /**
@@ -42,7 +44,9 @@ class PostController extends Controller
         $data = $request->all();
 
         $post = new Post();
-        $this->updatePost($post, $data);
+        $postExtraDetails = new PostExtraDetails ();
+
+        $this->updatePost($post, $postExtraDetails, $data);
 
         return redirect()->route('posts.single', $post->id);
     }
@@ -99,12 +103,19 @@ class PostController extends Controller
         return redirect()->route('posts.index');
     }
 
-    private function updatePost(Post $post, $data) {
+    private function updatePost(Post $post, $postExtraDetails, $data) {
+
+        $postExtraDetails->location = $data ['location'];
+        $postExtraDetails->edit = $data ['edit'];
+        $postExtraDetails->save();
+
         $post->picture = $data['picture'];
         $post->description = $data['description'];
         $post->accountName = $data['accountName'];
         $post->accountPfp = $data['accountPfp'];
         $post->date = $data['date'];
+        $post->post_extra_detail_id = $postExtraDetails->id;
+        $post->category_id = $data['category_id'];
         $post->save();
     }
 }
